@@ -106,7 +106,6 @@ tracer_provider = TracerProvider(
         "service.namespace": SERVICE_APP_NAME,
         "service.instance.id": SERVICE_APP_NAME,
         "compose_service": SERVICE_APP_NAME,
-        "compose_service": SERVICE_APP_NAME
     })
 )
 tracer_provider.add_span_processor(span_otel_processor)

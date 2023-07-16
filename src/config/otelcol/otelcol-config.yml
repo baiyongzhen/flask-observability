@@ -29,15 +29,6 @@ receivers:
 processors:
   batch:
 
-  attributes:
-    actions:
-    - action: insert
-      key: event_domain
-      from_attribute: event.domain
-    - action: insert
-      key: loki.attribute.labels
-      value: event_domain
-
   resource:
     attributes:
     - action: insert
@@ -87,5 +78,5 @@ service:
       exporters: [otlp/tempo]
     logs:
       receivers: [otlp]
-      processors: [resource, attributes]
+      processors: [resource]
       exporters: [loki]
